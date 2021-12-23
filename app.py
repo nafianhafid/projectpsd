@@ -17,7 +17,7 @@ data_orders = pd.read_csv('orders.csv',delimiter=',')
 data_trainfull = data_trainfull.reset_index()
 # create a button in the side bar that will move to the next page/radio button choice
 #cols = ['customer_id', 'gender','location_type','id','OpeningTime','language','vendor_rating','serving_distance','vendor_tag_name','delivery_charge']
-datasetsatu = pd.read_csv('train_full2.csv',usecols=[1,2,8,11,20,29,30,18,62,17])
+datasetsatu = pd.read_csv('train_full2.csv',usecols=[1,2,8,11,20,29,30,18,62,17],header=0)
 datasetsatu.rename(columns = {'vendor_rating':'mean_rating'},inplace=True)
 
 #gabungkan dengan id yang sama
