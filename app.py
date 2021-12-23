@@ -13,7 +13,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 
 data_trainfull = pd.read_csv('train_full2.csv',sep=',')
-data_orders = pd.read_csv('orders.csv',sep=',')
+data_orders = pd.read_csv('orders.csv',delimiter=',')
 data_trainfull = data_trainfull.reset_index()
 # create a button in the side bar that will move to the next page/radio button choice
 cols = ['customer_id', 'gender','location_type','id','OpeningTime','language','vendor_rating','serving_distance','vendor_tag_name','delivery_charge']
