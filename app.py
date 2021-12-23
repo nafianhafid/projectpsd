@@ -25,8 +25,7 @@ datasetsatu['semua'] = datasetsatu[kolom].apply(lambda row: '_'.join(row.values.
 #hilangkan duplikasi data id dan customer id
 datasetsatu.drop_duplicates(['semua'],inplace=True)
 #dataset order
-datasetdua = data_orders[['akeed_order_id','customer_id','vendor_id','item_count',
-                        'grand_total','vendor_rating']][:]
+datasetdua = data_orders[['akeed_order_id','customer_id','vendor_id','item_count','grand_total','vendor_rating']][:]
 datasetdua.rename(columns = {'vendor_id':'id'}, inplace =True)
 
 kolom = ['id','customer_id']
@@ -101,9 +100,7 @@ customer_vendor_ratings_mean = customer_vendor_ratings.groupby(['customer_id','v
 #reset index
 data_customer_vendor_rating_mean = customer_vendor_ratings_mean.reset_index()
 # membuat full matriks
-rating_full_matriks = data_customer_vendor_rating_mean.pivot(index='customer_id',
-                                                             columns='vendor_id',
-                                                             values='rating')
+rating_full_matriks = data_customer_vendor_rating_mean.pivot(index='customer_id',columns='vendor_id',values='rating')
 # Menghitung similarity semua pasangan dari customer dari full matrix
 rating_matriks_dummy = rating_full_matriks.copy().fillna(0)
 
