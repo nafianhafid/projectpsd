@@ -59,7 +59,6 @@ sex=pd.get_dummies(datasetgabung['gender'], columns = ['gender'],prefix="sex",dr
 
 datasetgabung=pd.concat([datasetgabung,sex],axis=1)
 
-#Drop the raw 'gender' column(char)
 datasetgabung.drop(['gender'],axis=1,inplace=True)
 #dataset untuk training
 dataset1_training = datasetgabung[:]
