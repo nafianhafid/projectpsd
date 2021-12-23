@@ -12,7 +12,7 @@ from difflib import SequenceMatcher
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 
-data_trainfull = pd.read_csv('train_full2.csv')
+data_trainfull = pd.read_csv('train_full2.csv',delimiter=',')
 data_orders = pd.read_csv('orders.csv')
 data_trainfull = data_trainfull.reset_index()
 # create a button in the side bar that will move to the next page/radio button choice
