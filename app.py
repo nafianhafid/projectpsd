@@ -157,8 +157,6 @@ def cf_knn(customer_id,vendor_id,neighbor_size=0):
   
   return mean_rating
 
-#knn_skor(cf_knn, neighbor_size=20)
-
 def cf_rekom_vendor(customer_id, n_items, neighbor_size=0):
   customer_vendor = rating_full_matriks.loc[customer_id].copy()
 
