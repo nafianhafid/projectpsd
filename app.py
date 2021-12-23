@@ -12,8 +12,8 @@ from difflib import SequenceMatcher
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 
-data_trainfull = pd.read_csv('D:/Kuliah/projectPSD/train_full2.csv')
-data_orders = pd.read_csv('D:/Kuliah/projectPSD/orders.csv')
+data_trainfull = pd.read_csv('train_full2.csv')
+data_orders = pd.read_csv('orders.csv')
 data_trainfull = data_trainfull.reset_index()
 # create a button in the side bar that will move to the next page/radio button choice
 datasetsatu = data_trainfull[['customer_id', 'gender','location_type','id','OpeningTime',
@@ -284,7 +284,7 @@ if choice == 'Home':
     expander_dataset = st.expander(label = 'Dataset')
     expander_label.write('Sering kali kita berkumpul dengan keluarga atau teman ketika datang waktu makan. Dengan adanya aplikasi rekomendasi, orang akan lebih tertarik mengenai bagaimana kita akan menyukai restoran. Di masa lalu, orang memperoleh saran untuk restoran dari teman- teman. Meskipun metode ini digunakan, namun memiliki beberapa keterbatasan. Pertama, rekomendasi dari teman terbatas pada tempat-tempat yang telah mereka kunjungi sebelumnya. Dengan demikian, pengguna tidak dapat memperoleh informasi tentang tempat-tempat yang belum dikunjungi oleh teman-teman mereka. Selain itu, ada kemungkinan pengguna tidak menyukai tempat yang direkomendasikan oleh teman-teman mereka. Pada dataset Restaurant Recommendation Challenge ini bertujuan untuk menentukan rekomendasi makanan apa yang akan ditawarkan oleh sebuah restaurant kepada customer berdasarkan makanan yang paling sering dipesan oleh customer.')
     expander_metode.write('Metode yang digunakan untuk prediksi adalah KNN dan Cosine Similarity')
-    expander_dataset.image('C:/Downloads/dataset.png')
+    expander_dataset.image('dataset.png')
 elif choice == 'Exploratory Data Analysis':
     st.title('Exploratory Data Analysis')
     st.subheader('Melihat 10 Data Pertama')
