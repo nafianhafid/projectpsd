@@ -270,6 +270,7 @@ pkle.dump(new_choice.index(choice), open('next.p', 'wb'))
 # finally get to whats on each page
 if choice == 'Home':
     st.title("Projek Akhir Kelompok 11")
+    st.subheader("Restaurant Recomendation"
     st.subheader("Anggota:")
     st.text("M Farid Muzayyani 195150207111040")
     st.text("M Hafidh Ilmi Nafi'an 195150200111042")
