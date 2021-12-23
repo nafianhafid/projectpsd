@@ -16,15 +16,15 @@ data_trainfull = pd.read_csv('train_full2.csv',sep=',')
 data_orders = pd.read_csv('orders.csv',delimiter=',')
 data_trainfull = data_trainfull.reset_index()
 # create a button in the side bar that will move to the next page/radio button choice
-cols = ['customer_id', 'gender','location_type','id','OpeningTime','language','vendor_rating','serving_distance','vendor_tag_name','delivery_charge']
-#datasetsatu = pd.read_csv('train_full2.csv',usecols=cols)
-#datasetsatu.rename(columns = {'vendor_rating':'mean_rating'},inplace=True)
+#cols = ['customer_id', 'gender','location_type','id','OpeningTime','language','vendor_rating','serving_distance','vendor_tag_name','delivery_charge']
+datasetsatu = pd.read_csv('train_full2.csv',usecols=[1,2,8,11,20,29,30,18,62,17])
+datasetsatu.rename(columns = {'vendor_rating':'mean_rating'},inplace=True)
 
 #gabungkan dengan id yang sama
 kolom = ['id','customer_id']
-#datasetsatu['semua'] = datasetsatu[kolom].apply(lambda row: '_'.join(row.values.astype(str)), axis=1)
+datasetsatu['semua'] = datasetsatu[kolom].apply(lambda row: '_'.join(row.values.astype(str)), axis=1)
 #hilangkan duplikasi data id dan customer id
-#datasetsatu.drop_duplicates(['semua'],inplace=True)
+datasetsatu.drop_duplicates(['semua'],inplace=True)
 #dataset order
 datasetdua = data_orders[['akeed_order_id','customer_id','vendor_id','item_count','grand_total','vendor_rating']][:]
 datasetdua.rename(columns = {'vendor_id':'id'}, inplace =True)
